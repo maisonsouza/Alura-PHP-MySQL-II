@@ -20,6 +20,10 @@ include ("logica-usuario.php");?>
     <p class="alert-danger"> Você não tem acesso a essa funcionalidade </p>
 <?php } ?>
 
+<?php if (isset($_GET['logout']) && $_GET['logout'] == true) { ?>
+    <p class="alert-success"> Usuário desconectado com sucesso </p>
+<?php } ?>
+
 
 
 
@@ -28,6 +32,7 @@ include ("logica-usuario.php");?>
 Loja do <?php echo $nome; ?>
 <?php if (usuarioEstaLogado()) { ?>
     <p class="text-success">Você está logado como <?= usuarioLogado() ?></p>
+    <a href="logout.php">Deslogar</a>
 <?php } else { ?>
 <h2>Login</h2>
 <form action="login.php" method="post">

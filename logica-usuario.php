@@ -5,13 +5,13 @@
  * Date: 17/01/2019
  * Time: 10:30
  */
-
+session_start();
 function usuarioEstaLogado(){
-    return isset($_COOKIE["usuario_logado"]);
+    return isset($_SESSION["usuario_logado"]);
 }
 
 function usuarioLogado(){
-    return $_COOKIE["usuario_logado"];
+    return $_SESSION["usuario_logado"];
 }
 
 function verificaUsuario(){
@@ -22,6 +22,10 @@ function verificaUsuario(){
 }
 
 function logaUsuario($email){
-    setcookie("usuario_logado",$email);
+    $_SESSION["usuario_logado"]=$email;
+}
+
+function logout(){
+    session_destroy();
 }
 
