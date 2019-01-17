@@ -16,6 +16,7 @@ function usuarioLogado(){
 
 function verificaUsuario(){
     if(!usuarioEstaLogado()){
+    $_SESSION["danger"]="Você não tem acesso a essa funcionalidade";
         header("Location:index.php?falhaDeSeguranca=true");
         die();
     }
@@ -27,5 +28,6 @@ function logaUsuario($email){
 
 function logout(){
     session_destroy();
+    session_start();
 }
 

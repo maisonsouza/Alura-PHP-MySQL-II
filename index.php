@@ -9,16 +9,24 @@ include("cabecalho.php");
 include ("logica-usuario.php");?>
 
 <?php if (isset($_GET['login']) && $_GET['login'] == true) { ?>
-    <p class="alert-success">Logado com sucesso </p>
+    <p class="alert-success">Usuário Logado com sucesso </p>
 <?php } ?>
 
-<?php if (isset($_GET['login']) && $_GET['login'] == false) { ?>
-    <p class="alert-danger">Usuário ou senha inválida </p>
+<?php if (isset($_SESSION["success"])) { ?>
+    <p class="alert-success"><?=$_SESSION['success']?></p>
 <?php } ?>
 
-<?php if (isset($_GET['falhaDeSeguranca']) && $_GET['falhaDeSeguranca'] == true) { ?>
-    <p class="alert-danger"> Você não tem acesso a essa funcionalidade </p>
+<?php
+unset($_SESSION["success"] );
+?>
+
+<?php if (isset($_SESSION["danger"])) { ?>
+    <p class="alert-danger"><?=$_SESSION['danger']?></p>
 <?php } ?>
+
+<?php
+unset($_SESSION["danger"] );
+?>
 
 <?php if (isset($_GET['logout']) && $_GET['logout'] == true) { ?>
     <p class="alert-success"> Usuário desconectado com sucesso </p>

@@ -8,13 +8,18 @@
 include("cabecalho.php");
 include("conecta.php");
 include("banco-produto.php");
-
-if (array_key_exists("removido", $_GET) && $_GET["removido"] == "true") {
-    ?>
-    <p class="alert-success">Produto removido com sucesso</p>
-    <?php
-}
+include ("logica-usuario.php");
 ?>
+
+<?php if (isset($_SESSION["success"])) { ?>
+    <p class="alert-success"><?=$_SESSION['success']?></p>
+<?php } ?>
+
+<?php
+unset($_SESSION["success"] );
+?>
+
+
     <table class="table table-striped table-bordered">
         <?php
         $produtos = listaProdutos($conexao);
