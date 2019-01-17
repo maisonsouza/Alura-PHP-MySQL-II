@@ -9,6 +9,10 @@
 include("cabecalho.php");
 include("conecta.php");
 include("banco-produto.php");
+include ("logica-usuario.php");
+
+
+verificaUsuario();
 
 $nome_produto = $_POST['nome_produto'];
 $preco_produto = $_POST['preco_produto'];

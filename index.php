@@ -5,7 +5,8 @@
  * Date: 17/11/2018
  * Time: 19:38
  */
-include("cabecalho.php"); ?>
+include("cabecalho.php");
+include ("logica-usuario.php");?>
 
 <?php if (isset($_GET['login']) && $_GET['login'] == true) { ?>
     <p class="alert-success">Logado com sucesso </p>
@@ -15,14 +16,18 @@ include("cabecalho.php"); ?>
     <p class="alert-danger">Usuário ou senha inválida </p>
 <?php } ?>
 
+<?php if (isset($_GET['falhaDeSeguranca']) && $_GET['falhaDeSeguranca'] == true) { ?>
+    <p class="alert-danger"> Você não tem acesso a essa funcionalidade </p>
+<?php } ?>
+
 
 
 
 <h1>Seja bem vindo</h1>
 <?php $nome = "Maison" ?>
 Loja do <?php echo $nome; ?>
-<?php if (isset($_COOKIE["usuario_logado"])) { ?>
-    <p class="text-success">Você está logado como <?= $_COOKIE["usuario_logado"] ?></p>
+<?php if (usuarioEstaLogado()) { ?>
+    <p class="text-success">Você está logado como <?= usuarioLogado() ?></p>
 <?php } else { ?>
 <h2>Login</h2>
 <form action="login.php" method="post">
