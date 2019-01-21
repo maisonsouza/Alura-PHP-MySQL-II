@@ -6,8 +6,8 @@
  * Time: 19:38
  */
 ?>
-<?php include("cabecalho.php");
-include("logica-usuario.php");
+<?php require_once("cabecalho.php");
+require_once("logica-usuario.php");
 ?>
 
 <h1>Seja bem vindo</h1>

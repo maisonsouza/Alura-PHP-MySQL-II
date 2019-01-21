@@ -6,7 +6,7 @@
  * Time: 16:25
  */
 
-
+require_once("conecta.php");
 function listaCategorias($conexao){
     $categorias = array();
     $resultado = mysqli_query($conexao,"select * from categorias");

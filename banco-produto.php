@@ -5,7 +5,7 @@
  * Date: 21/11/2018
  * Time: 12:06
  */
-
+require_once("conecta.php");
 function listaProdutos($conexao)
 {
     $produtos = array();

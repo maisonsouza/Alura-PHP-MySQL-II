@@ -5,7 +5,7 @@
  * Date: 17/01/2019
  * Time: 12:10
  */
-include ("logica-usuario.php");
+require_once ("logica-usuario.php");
 
 logout();
 $_SESSION['success']="Deslogado com sucesso";
