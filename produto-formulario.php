@@ -12,39 +12,15 @@ include("logica-usuario.php");
 
 
 verificaUsuario();
-
+$produto = array("nome"=>"" ,"descricao"=>"","preco"=>"","categoria_id"=>"1");
+$usado = "";
 $categorias = listaCategorias($conexao);
 ?>
 
     <h1> Formulário de cadastro </h1>
     <form action="adiciona-produto.php" method="post">
         <table class="table">
-            <tr>
-                <td>Produto:</td>
-                <td><input name="nome_produto" class="form-control"></td>
-            </tr>
-            <tr>
-                <td>Preço:</td>
-                <td><input type="number" name="preco_produto" class="form-control"></td>
-            </tr>
-            <tr>
-                <td>Descrição:</td>
-                <td><textarea name="descricao" class="form-control"></textarea></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="checkbox" name="usado" value="true"> Usado
-            </tr>
-            <tr>
-                <td>Categoria:</td>
-                <td>
-                    <select name="categoria_id" class="form-control">
-                        <?php foreach ($categorias as $categoria): ?>
-                            <option value="<?= $categoria['id'] ?>"><?= $categoria['nome'] ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </td>
-            </tr>
+            <?php include("produto-formulario-base.php"); ?>
             <tr>
                 <td><input class="btn btn-primary" type="submit" value="Cadastrar"/></td>
             </tr>

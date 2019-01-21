@@ -9,10 +9,7 @@
 <?php include("cabecalho.php");
 include("conecta.php");
 include("banco-produto.php");
-include ("mostra-alerta.php");
 ?>
-
-
     <table class="table table-striped table-bordered">
         <?php
         $produtos = listaProdutos($conexao);
