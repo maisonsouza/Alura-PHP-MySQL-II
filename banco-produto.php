@@ -5,6 +5,7 @@
  * Date: 21/11/2018
  * Time: 12:06
  */
+
 function listaProdutos($conexao)
 {
     $produtos = array();

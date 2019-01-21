@@ -5,6 +5,8 @@
  * Date: 21/11/2018
  * Time: 16:25
  */
+
+
 function listaCategorias($conexao){
     $categorias = array();
     $resultado = mysqli_query($conexao,"select * from categorias");

@@ -6,6 +6,10 @@
  * Time: 20:27
  */
 ?>
+<?php
+error_reporting(E_ALL ^ E_NOTICE);
+include("mostra-alerta.php"); ?>
+
 <html>
 <head>
     <title>Minha loja</title>
@@ -30,3 +34,5 @@
 </header>
 <div class="container">
     <div class="principal">
+<?php  mostraAlerta("success"); ?>
+<?php mostraAlerta("danger"); ?>
