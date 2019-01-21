@@ -28,6 +28,7 @@ require_once("mostra-alerta.php"); ?>
                 <li class="nav-item"><a class="nav-link" href="produto-formulario.php">Adiciona Produto</a></li>
                 <li class="nav-item"><a class="nav-link" href="produto-lista.php">Lista produtos</a></li>
                 <li class="nav-item"><a class="nav-link" href="sobre.php">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="contato.php">Contato</a></li>
             </ul>
         </div>
     </div>
